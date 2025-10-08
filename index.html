@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TypeMaster Pro - Typing Speed Test</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="logo">⚡ TypeMaster Pro</h1>
+            <div class="theme-toggle">
+                <button id="themeBtn">🌙 Dark</button>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <!-- Stats Dashboard -->
+            <div class="stats-dashboard">
+                <div class="stat-card">
+                    <div class="stat-value" id="wpm">0</div>
+                    <div class="stat-label">WPM</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="accuracy">100%</div>
+                    <div class="stat-label">Accuracy</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="timer">60</div>
+                    <div class="stat-label">Seconds</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="errors">0</div>
+                    <div class="stat-label">Errors</div>
+                </div>
+            </div>
+
+            <!-- Time Selection -->
+            <div class="time-selection">
+                <button class="time-btn active" data-time="30">30s</button>
+                <button class="time-btn" data-time="60">60s</button>
+                <button class="time-btn" data-time="120">120s</button>
+            </div>
+
+            <!-- Typing Area -->
+            <div class="typing-container">
+                <div class="text-display" id="textDisplay">
+                    <span class="correct">Welcome to TypeMaster Pro! Start typing to begin your speed test. The text will appear here as you type.</span>
+                </div>
+                <textarea 
+                    class="typing-input" 
+                    id="typingInput" 
+                    placeholder="Start typing here..."
+                    disabled
+                ></textarea>
+            </div>
+
+            <!-- Controls -->
+            <div class="controls">
+                <button class="btn primary" id="startBtn">Start Test</button>
+                <button class="btn secondary" id="resetBtn" disabled>Reset</button>
+            </div>
+
+            <!-- Results -->
+            <div class="results hidden" id="results">
+                <h2>Test Complete! 🎉</h2>
+                <div class="result-stats">
+                    <div class="result-item">
+                        <span>Final WPM:</span>
+                        <strong id="finalWpm">0</strong>
+                    </div>
+                    <div class="result-item">
+                        <span>Accuracy:</span>
+                        <strong id="finalAccuracy">100%</strong>
+                    </div>
+                    <div class="result-item">
+                        <span>Errors:</span>
+                        <strong id="finalErrors">0</strong>
+                    </div>
+                </div>
+                <button class="btn primary" id="newTestBtn">New Test</button>
+            </div>
+
+            <!-- Progress Chart -->
+            <div class="progress-section">
+                <h3>Your Progress</h3>
+                <div class="progress-chart">
+                    <canvas id="progressChart"></canvas>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
